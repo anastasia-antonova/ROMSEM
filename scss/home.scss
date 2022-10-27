@@ -1,0 +1,84 @@
+@import "color";
+@import "reset";
+@import "general";
+
+body {
+  .setu {
+
+
+    .content {
+      max-width: 1170px;
+      min-height: 2295px;
+      background-color: $concrete;
+      margin: auto;
+      box-sizing: border-box;
+
+      h2 {
+        font-family: 'DIN Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 45px;
+        color: $black;
+        margin-left: 111px;
+
+      }
+
+      .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .item {
+          width: 288px;
+          height: 400px;
+          background-color: $white;
+          margin-top: 30px;
+          margin-right: 42px;
+          padding-left: 17.5px;
+          box-sizing: border-box;
+
+          img {
+            width: 253px;
+            height: 211px;
+          }
+          h3 {
+            font-family: 'DIN Pro';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 30px;
+            color: $black;
+            margin-bottom: 31px;
+          }
+          > p {
+            font-family: 'DIN Pro';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: $edward;
+            margin-bottom: 21px;
+
+          }
+          .buy {
+            display: flex;
+            .price {
+              font-family: 'DIN Pro';
+              font-style: normal;
+              font-weight: 700;
+              font-size: 24px;
+              line-height: 30px;
+              display: flex;
+              align-items: center;
+              color: $black;
+              margin-right: 12px;
+            }
+            button {
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
