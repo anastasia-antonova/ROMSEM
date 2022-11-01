@@ -66,14 +66,18 @@ function showSlice(page) {
     let html = "";
     baseArr.slice(from, to).forEach((value, index) => {
         html += `
+        
         <div class="item">
             <img src="image/${value.image}" alt="hjh">
+          <div class="content-item">
             <h3>${value.name}</h3>
             <p>1050 грамм, 30 кусочков</p>
             <div class="buy">
                 <p class="price">${value.price} СОМ</p>
                 <button>Хочу!</button>
             </div>
+          </div> 
+           
         </div>`
     });
     content.innerHTML = html;
@@ -126,7 +130,7 @@ function showPaginationButtons() {
     paginator.innerHTML = page;
     checkActive();
 }
-
+showSlice(1);
 showPaginationButtons();
 
 function checkActive() {

@@ -2,50 +2,150 @@
 @import "reset";
 @import "general";
 @import "fonts";
+@import "_media";
 
 body {
 
   .set {
     background-color: $concrete;
     header {
-      display: flex;
       width: 100%;
       min-height: 95px;
       border: 0.5px solid $edward;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      .bbb {
-        border-right: 0.5px solid $edward;
-        width: 19%;
-        min-height: 95px;
-        padding: 6px 15px 8px 35px;
-        box-sizing: border-box;
+      @include media_mobile {
+       background-color: $white;
+        padding-left: 19px;
+      }
 
-        h3 {
+      .left-content {
+        display: flex;
+
+
+        @include media_mobile {
+          align-items: center;
+        }
+
+        img {
+          display: none;
+          @include media_mobile {
+            display: block;
+            width: 47px;
+            height: 43px;
+          }
+        }
+
+        .phone {
+          border-right: 0.5px solid $edward;
+          padding: 6px 15px 8px 35px;
+          box-sizing: border-box;
+
+          @include media_mobile {
+            border-right: none;
+          }
+
+          h3 {
+            font-family: 'DIN Pro';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            color: $cod_gray;
+          }
+          .number {
+            font-family: 'DIN Pro';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 100%;
+            color: $neonc_carrot;
+          }
+          .color-gray {
+            font-family: 'DIN Pro';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: $edward;
+
+          }
+        }
+        .city {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-left: 15px;
+
+          @include media_mobile {
+            display: none;
+          }
+
+          p {
+            &:first-child {
+
+              font-family: 'DIN Pro';
+              font-style: normal;
+              font-weight: 300;
+              font-size: 14px;
+              line-height: 17px;
+              color: $edward;
+              margin-bottom: 4px;
+            }
+
+            &:nth-child(2) {
+              font-family: 'DIN Pro';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 22px;
+              color: $black;
+            }
+          }
+        }
+      }
+      .right-content {
+        display: flex;
+        padding-right: 40px;
+
+
+        .search {
+          width: 30px;
+          height: 30px;
+          background-image: url("../image/search.svg");
+        }
+
+        p {
           font-family: 'DIN Pro';
           font-style: normal;
-          font-weight: 500;
+          font-weight: 400;
           font-size: 18px;
           line-height: 22px;
           color: $cod_gray;
-        }
-        .number {
-          font-family: 'DIN Pro';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 18px;
-          line-height: 100%;
-          color: $neonc_carrot;
-        }
-        .color-gray {
-          font-family: 'DIN Pro';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 14px;
-          line-height: 17px;
-          color: $edward;
+          margin-right: 10px;
 
+          @include media_mobile {
+            display: none;
+          }
+        }
+        .pay {
+          font-family: 'DIN Pro';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          color: $neonc_carrot;
+          text-decoration: none;
+          margin-right: 69px;
+
+          @include media_mobile {
+            display: none;
+          }
         }
       }
+
     }
 
     .content_set {
@@ -65,13 +165,37 @@ body {
         position: relative;
         margin-top: 30px;
 
+        @include media_mobile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 0;
+        }
+
         &::before {
           content: '';
           width: 40px;
           height: 43px;
-          position: absolute;
           background-image: url("../image/Сеты-Logo.svg");
           left: -45px;
+
+          @include media_mobile {
+            left: 119px;
+          }
+        }
+
+      }
+
+      .sort {
+        width: 330px;
+        height: 50px;
+        background-color: $white;
+        border-radius: 10px;
+        margin: auto;
+        display: none;
+        @include media_mobile {
+          display: block;
+          margin-top: 15px;
         }
 
       }
@@ -92,75 +216,158 @@ body {
           padding-right: 8.80px;
           box-sizing: border-box;
 
+          &:nth-child(3), &:nth-child(6), &:nth-child(9) {
+            margin-right: 0;
+          }
+
+          @include media_mobile {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 330px;
+            height: 120px;
+            margin-right: 0;
+            border-radius: 10px;
+            padding: 18px 14px;
+            -top: 10px;
+
+          }
+
           img {
             width: 253px;
             height: 211px;
-          }
 
-          h3 {
-            font-family: 'DIN Pro';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 24px;
-            line-height: 30px;
-            color: $black;
-            margin-bottom: 31px;
-          }
-          > p {
-            font-family: 'DIN Pro';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 22px;
-            color: $edward;
-            margin-bottom: 21px;
-
-          }
-          .buy {
-            display: flex;
-            border-top: 0.5px solid $edward;
-            padding-top: 5.70px;
-
-
-            .price {
-              font-family: 'DIN Pro';
-              font-style: normal;
-              font-weight: 700;
-              font-size: 24px;
-              line-height: 30px;
-              display: flex;
-              align-items: center;
-              color: $black;
-              margin-right: 11px;
+            @include media_mobile {
+              width: 100px;
+              height: 84px;
+              margin-top: 18px;
             }
+          }
 
-            button {
-              width: 143px;
-              height: 40px;
-              background-color: $jaffa;
+          .content-item {
+            h3 {
               font-family: 'DIN Pro';
               font-style: normal;
               font-weight: 500;
               font-size: 24px;
               line-height: 30px;
-              color: $concrete;
-              border: none;
-              border-radius: 5px;
-              cursor: pointer;
+              color: $black;
+              margin-bottom: 31px;
 
-              &:hover {
-                background-color: #be380a;
+              @include media_mobile {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                margin-bottom: 5px;
+              }
+            }
+
+            > p {
+              font-family: 'DIN Pro';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 22px;
+              color: $edward;
+              margin-bottom: 21px;
+
+              @include media_mobile {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                margin-bottom: 18px;
+              }
+
+            }
+            .buy {
+              display: flex;
+              border-top: 0.5px solid $edward;
+              padding-top: 5.70px;
+
+              @include media_mobile {
+                border-top: none;
+              }
+
+
+              .price {
+                font-family: 'DIN Pro';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 30px;
+                display: flex;
+                align-items: center;
+                color: $black;
+                margin-right: 11px;
+
+                @include media_mobile {
+                  font-weight: 700;
+                  font-size: 18px;
+                  line-height: 23px;
+                }
+              }
+
+              button {
+                width: 143px;
+                height: 40px;
+                background-color: $jaffa;
+                font-family: 'DIN Pro';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 30px;
+                color: $concrete;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+
+                @include media_mobile {
+                  font-weight: 500;
+                  font-size: 18px;
+                  line-height: 22px;
+                  width: 95px;
+                  height: 26px;
+                }
+
+                &:hover {
+                  background-color: #be380a;
+                }
               }
             }
           }
+
+
         }
+
       }
 
       .pagination {
 
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         margin-top: 100px;
+        margin-right: 107px;
+
+        @include media_mobile{
+          display: flex;
+          margin-top: 50px;
+          justify-content: center;
+          align-items: center;
+          margin-right: inherit;
+
+        }
+
+        .pagination-content {
+
+          button {
+            @include media_mobile {
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              margin-right: 4px;
+            }
+          }
+        }
 
         .left {
           margin-right: 14px;
@@ -168,6 +375,10 @@ body {
 
         .right {
           margin-left: 14px;
+
+          @include media_mobile {
+            margin-left: 10px;
+          }
         }
 
         button {
@@ -179,10 +390,48 @@ body {
           cursor: pointer;
           margin-right: 2px;
 
+          @include media_mobile {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+          }
+
           &.active {
             background-color: $jaffa;
             color: white;
           }
+        }
+      }
+
+      .text-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        max-width: 950px;
+        margin: auto;
+        margin-top: 100px;
+
+        @include media_mobile {
+          max-width: 330px;
+        }
+
+        h3 {
+          font-family: 'DIN Pro';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 30px;
+          color: $edward;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-family: 'DIN Pro';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 100%;
+          color: $edward;
         }
       }
     }

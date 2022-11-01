@@ -339,19 +339,48 @@ body .set {
   background-color: #F2F2F2;
 }
 body .set header {
-  display: flex;
   width: 100%;
   min-height: 95px;
   border: 0.5px solid #A4ACAD;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-body .set header .bbb {
+@media only screen and (max-width: 640px) {
+  body .set header {
+    background-color: #FFFFFF;
+    padding-left: 19px;
+  }
+}
+body .set header .left-content {
+  display: flex;
+}
+@media only screen and (max-width: 640px) {
+  body .set header .left-content {
+    align-items: center;
+  }
+}
+body .set header .left-content img {
+  display: none;
+}
+@media only screen and (max-width: 640px) {
+  body .set header .left-content img {
+    display: block;
+    width: 47px;
+    height: 43px;
+  }
+}
+body .set header .left-content .phone {
   border-right: 0.5px solid #A4ACAD;
-  width: 19%;
-  min-height: 95px;
   padding: 6px 15px 8px 35px;
   box-sizing: border-box;
 }
-body .set header .bbb h3 {
+@media only screen and (max-width: 640px) {
+  body .set header .left-content .phone {
+    border-right: none;
+  }
+}
+body .set header .left-content .phone h3 {
   font-family: "DIN Pro";
   font-style: normal;
   font-weight: 500;
@@ -359,7 +388,7 @@ body .set header .bbb h3 {
   line-height: 22px;
   color: #111111;
 }
-body .set header .bbb .number {
+body .set header .left-content .phone .number {
   font-family: "DIN Pro";
   font-style: normal;
   font-weight: 500;
@@ -367,13 +396,79 @@ body .set header .bbb .number {
   line-height: 100%;
   color: #FF9846;
 }
-body .set header .bbb .color-gray {
+body .set header .left-content .phone .color-gray {
   font-family: "DIN Pro";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
   color: #A4ACAD;
+}
+body .set header .left-content .city {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+}
+@media only screen and (max-width: 640px) {
+  body .set header .left-content .city {
+    display: none;
+  }
+}
+body .set header .left-content .city p:first-child {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A4ACAD;
+  margin-bottom: 4px;
+}
+body .set header .left-content .city p:nth-child(2) {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+body .set header .right-content {
+  display: flex;
+  padding-right: 40px;
+}
+body .set header .right-content .search {
+  width: 30px;
+  height: 30px;
+  background-image: url("../image/search.svg");
+}
+body .set header .right-content p {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #111111;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 640px) {
+  body .set header .right-content p {
+    display: none;
+  }
+}
+body .set header .right-content .pay {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FF9846;
+  text-decoration: none;
+  margin-right: 69px;
+}
+@media only screen and (max-width: 640px) {
+  body .set header .right-content .pay {
+    display: none;
+  }
 }
 body .set .content_set {
   max-width: 1170px;
@@ -392,13 +487,39 @@ body .set .content_set h2 {
   position: relative;
   margin-top: 30px;
 }
+@media only screen and (max-width: 640px) {
+  body .set .content_set h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+  }
+}
 body .set .content_set h2::before {
   content: "";
   width: 40px;
   height: 43px;
-  position: absolute;
   background-image: url("../image/Сеты-Logo.svg");
   left: -45px;
+}
+@media only screen and (max-width: 640px) {
+  body .set .content_set h2::before {
+    left: 119px;
+  }
+}
+body .set .content_set .sort {
+  width: 330px;
+  height: 50px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  margin: auto;
+  display: none;
+}
+@media only screen and (max-width: 640px) {
+  body .set .content_set .sort {
+    display: block;
+    margin-top: 15px;
+  }
 }
 body .set .content_set .boxes {
   display: flex;
@@ -415,11 +536,34 @@ body .set .content_set .boxes .item {
   padding-right: 8.8px;
   box-sizing: border-box;
 }
+body .set .content_set .boxes .item:nth-child(3), body .set .content_set .boxes .item:nth-child(6), body .set .content_set .boxes .item:nth-child(9) {
+  margin-right: 0;
+}
+@media only screen and (max-width: 640px) {
+  body .set .content_set .boxes .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 330px;
+    height: 120px;
+    margin-right: 0;
+    border-radius: 10px;
+    padding: 18px 14px;
+    -top: 10px;
+  }
+}
 body .set .content_set .boxes .item img {
   width: 253px;
   height: 211px;
 }
-body .set .content_set .boxes .item h3 {
+@media only screen and (max-width: 640px) {
+  body .set .content_set .boxes .item img {
+    width: 100px;
+    height: 84px;
+    margin-top: 18px;
+  }
+}
+body .set .content_set .boxes .item .content-item h3 {
   font-family: "DIN Pro";
   font-style: normal;
   font-weight: 500;
@@ -428,7 +572,15 @@ body .set .content_set .boxes .item h3 {
   color: #000000;
   margin-bottom: 31px;
 }
-body .set .content_set .boxes .item > p {
+@media only screen and (max-width: 640px) {
+  body .set .content_set .boxes .item .content-item h3 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 5px;
+  }
+}
+body .set .content_set .boxes .item .content-item > p {
   font-family: "DIN Pro";
   font-style: normal;
   font-weight: 400;
@@ -437,12 +589,25 @@ body .set .content_set .boxes .item > p {
   color: #A4ACAD;
   margin-bottom: 21px;
 }
-body .set .content_set .boxes .item .buy {
+@media only screen and (max-width: 640px) {
+  body .set .content_set .boxes .item .content-item > p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 18px;
+  }
+}
+body .set .content_set .boxes .item .content-item .buy {
   display: flex;
   border-top: 0.5px solid #A4ACAD;
   padding-top: 5.7px;
 }
-body .set .content_set .boxes .item .buy .price {
+@media only screen and (max-width: 640px) {
+  body .set .content_set .boxes .item .content-item .buy {
+    border-top: none;
+  }
+}
+body .set .content_set .boxes .item .content-item .buy .price {
   font-family: "DIN Pro";
   font-style: normal;
   font-weight: 700;
@@ -453,7 +618,14 @@ body .set .content_set .boxes .item .buy .price {
   color: #000000;
   margin-right: 11px;
 }
-body .set .content_set .boxes .item .buy button {
+@media only screen and (max-width: 640px) {
+  body .set .content_set .boxes .item .content-item .buy .price {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+body .set .content_set .boxes .item .content-item .buy button {
   width: 143px;
   height: 40px;
   background-color: #F46D40;
@@ -467,19 +639,51 @@ body .set .content_set .boxes .item .buy button {
   border-radius: 5px;
   cursor: pointer;
 }
-body .set .content_set .boxes .item .buy button:hover {
+@media only screen and (max-width: 640px) {
+  body .set .content_set .boxes .item .content-item .buy button {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    width: 95px;
+    height: 26px;
+  }
+}
+body .set .content_set .boxes .item .content-item .buy button:hover {
   background-color: #be380a;
 }
 body .set .content_set .pagination {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   margin-top: 100px;
+  margin-right: 107px;
+}
+@media only screen and (max-width: 640px) {
+  body .set .content_set .pagination {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-right: inherit;
+  }
+}
+@media only screen and (max-width: 640px) {
+  body .set .content_set .pagination .pagination-content button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
 }
 body .set .content_set .pagination .left {
   margin-right: 14px;
 }
 body .set .content_set .pagination .right {
   margin-left: 14px;
+}
+@media only screen and (max-width: 640px) {
+  body .set .content_set .pagination .right {
+    margin-left: 10px;
+  }
 }
 body .set .content_set .pagination button {
   width: 75px;
@@ -490,9 +694,46 @@ body .set .content_set .pagination button {
   cursor: pointer;
   margin-right: 2px;
 }
+@media only screen and (max-width: 640px) {
+  body .set .content_set .pagination button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+}
 body .set .content_set .pagination button.active {
   background-color: #F46D40;
   color: white;
+}
+body .set .content_set .text-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 950px;
+  margin: auto;
+  margin-top: 100px;
+}
+@media only screen and (max-width: 640px) {
+  body .set .content_set .text-content {
+    max-width: 330px;
+  }
+}
+body .set .content_set .text-content h3 {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #A4ACAD;
+  margin-bottom: 10px;
+}
+body .set .content_set .text-content p {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  color: #A4ACAD;
 }
 
 /*# sourceMappingURL=home.css.map */
