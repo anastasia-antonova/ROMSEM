@@ -1,15 +1,56 @@
 @import "color";
 @import "reset";
 @import "general";
+@import "fonts";
 
 body {
-  .setu {
 
+  .set {
+    background-color: $concrete;
+    header {
+      display: flex;
+      width: 100%;
+      min-height: 95px;
+      border: 0.5px solid $edward;
 
-    .content {
+      .bbb {
+        border-right: 0.5px solid $edward;
+        width: 19%;
+        min-height: 95px;
+        padding: 6px 15px 8px 35px;
+        box-sizing: border-box;
+
+        h3 {
+          font-family: 'DIN Pro';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: $cod_gray;
+        }
+        .number {
+          font-family: 'DIN Pro';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 100%;
+          color: $neonc_carrot;
+        }
+        .color-gray {
+          font-family: 'DIN Pro';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+          color: $edward;
+
+        }
+      }
+    }
+
+    .content_set {
       max-width: 1170px;
       min-height: 2295px;
-      background-color: $concrete;
       margin: auto;
       box-sizing: border-box;
 
@@ -20,7 +61,18 @@ body {
         font-size: 36px;
         line-height: 45px;
         color: $black;
-        margin-left: 111px;
+        margin-left: 134px;
+        position: relative;
+        margin-top: 30px;
+
+        &::before {
+          content: '';
+          width: 40px;
+          height: 43px;
+          position: absolute;
+          background-image: url("../image/Сеты-Logo.svg");
+          left: -45px;
+        }
 
       }
 
@@ -28,19 +80,23 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+
         .item {
+
           width: 288px;
           height: 400px;
           background-color: $white;
           margin-top: 30px;
           margin-right: 42px;
-          padding-left: 17.5px;
+          padding-left: 17px;
+          padding-right: 8.80px;
           box-sizing: border-box;
 
           img {
             width: 253px;
             height: 211px;
           }
+
           h3 {
             font-family: 'DIN Pro';
             font-style: normal;
@@ -62,6 +118,10 @@ body {
           }
           .buy {
             display: flex;
+            border-top: 0.5px solid $edward;
+            padding-top: 5.70px;
+
+
             .price {
               font-family: 'DIN Pro';
               font-style: normal;
@@ -71,14 +131,61 @@ body {
               display: flex;
               align-items: center;
               color: $black;
-              margin-right: 12px;
+              margin-right: 11px;
             }
-            button {
 
+            button {
+              width: 143px;
+              height: 40px;
+              background-color: $jaffa;
+              font-family: 'DIN Pro';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 24px;
+              line-height: 30px;
+              color: $concrete;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #be380a;
+              }
             }
           }
         }
       }
+
+      .pagination {
+
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+
+        .left {
+          margin-right: 14px;
+        }
+
+        .right {
+          margin-left: 14px;
+        }
+
+        button {
+          width: 75px;
+          height: 25px;
+          margin-top: 13px;
+          border: 1px solid #2c2a2a;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-right: 2px;
+
+          &.active {
+            background-color: $jaffa;
+            color: white;
+          }
+        }
+      }
     }
+
   }
 }
