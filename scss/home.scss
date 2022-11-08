@@ -70,7 +70,6 @@ body {
             font-size: 14px;
             line-height: 17px;
             color: $edward;
-
           }
         }
         .city {
@@ -110,11 +109,34 @@ body {
         display: flex;
         padding-right: 40px;
 
+        .search-div {
+          position: relative;
 
-        .search {
-          width: 30px;
-          height: 30px;
-          background-image: url("../image/search.svg");
+          button {
+            display: none;
+            width: 10px;
+            height: 10px;
+            background-image: url("../image/close.png");
+            background-size: 10px;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 6px;
+            right: 5px;
+            background-color: inherit;
+
+            &.show-btn {
+              display: inline-block;
+            }
+          }
+
+          .search {
+            width: 30px;
+            height: 30px;
+            background-image: url("../image/search.svg");
+            cursor: pointer;
+          }
         }
 
         p {
@@ -154,37 +176,6 @@ body {
       margin: auto;
       box-sizing: border-box;
 
-      h2 {
-        font-family: 'DIN Pro';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 36px;
-        line-height: 45px;
-        color: $black;
-        margin-left: 134px;
-        position: relative;
-        margin-top: 30px;
-
-        @include media_mobile {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-left: 0;
-        }
-
-        &::before {
-          content: '';
-          width: 40px;
-          height: 43px;
-          background-image: url("../image/Сеты-Logo.svg");
-          left: -45px;
-
-          @include media_mobile {
-            left: 119px;
-          }
-        }
-
-      }
 
       .sort {
         width: 330px;
@@ -199,6 +190,12 @@ body {
         }
 
       }
+      .cont-text-select {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 111px;
+        padding-right: 111px;
+      }
 
       .boxes {
         display: flex;
@@ -206,7 +203,6 @@ body {
         justify-content: center;
 
         .item {
-
           width: 288px;
           height: 400px;
           background-color: $white;
@@ -308,7 +304,7 @@ body {
               }
 
               button {
-                width: 143px;
+                width: 128px;
                 height: 40px;
                 background-color: $jaffa;
                 font-family: 'DIN Pro';

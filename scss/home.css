@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -436,10 +435,31 @@ body .set header .right-content {
   display: flex;
   padding-right: 40px;
 }
-body .set header .right-content .search {
+body .set header .right-content .search-div {
+  position: relative;
+}
+body .set header .right-content .search-div button {
+  display: none;
+  width: 10px;
+  height: 10px;
+  background-image: url("../image/close.png");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  background-color: inherit;
+}
+body .set header .right-content .search-div button.show-btn {
+  display: inline-block;
+}
+body .set header .right-content .search-div .search {
   width: 30px;
   height: 30px;
   background-image: url("../image/search.svg");
+  cursor: pointer;
 }
 body .set header .right-content p {
   font-family: "DIN Pro";
@@ -476,37 +496,6 @@ body .set .content_set {
   margin: auto;
   box-sizing: border-box;
 }
-body .set .content_set h2 {
-  font-family: "DIN Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 45px;
-  color: #000000;
-  margin-left: 134px;
-  position: relative;
-  margin-top: 30px;
-}
-@media only screen and (max-width: 640px) {
-  body .set .content_set h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 0;
-  }
-}
-body .set .content_set h2::before {
-  content: "";
-  width: 40px;
-  height: 43px;
-  background-image: url("../image/Сеты-Logo.svg");
-  left: -45px;
-}
-@media only screen and (max-width: 640px) {
-  body .set .content_set h2::before {
-    left: 119px;
-  }
-}
 body .set .content_set .sort {
   width: 330px;
   height: 50px;
@@ -520,6 +509,12 @@ body .set .content_set .sort {
     display: block;
     margin-top: 15px;
   }
+}
+body .set .content_set .cont-text-select {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 111px;
+  padding-right: 111px;
 }
 body .set .content_set .boxes {
   display: flex;
@@ -626,7 +621,7 @@ body .set .content_set .boxes .item .content-item .buy .price {
   }
 }
 body .set .content_set .boxes .item .content-item .buy button {
-  width: 143px;
+  width: 128px;
   height: 40px;
   background-color: #F46D40;
   font-family: "DIN Pro";
