@@ -188,6 +188,11 @@ function resetValue () {
     showSlice(1);
     const buttonClose = document.getElementById("closeV")
     buttonClose.classList.remove('show-btn');
+
+    input.addEventListener('keydown', logKey);
+    function logKey(e) {
+        buttonClose.classList.remove('show-btn');
+    }
 }
 
 function inputFocus() {
@@ -266,3 +271,4 @@ function selectPrice() {
     //     });
     // }
 }
+
