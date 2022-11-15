@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Start</title>
+    <link rel="stylesheet" href="scss/startPage.css">
+
+</head>
+<body>
+
+<aside id="aside">
+    <div class="logo1">
+        <img src="image/Logosidebar.svg" alt="verv">
+    </div>
+    <div class="components">
+        <ul>
+            <li><img src="image/piza.svg" alt="verv">
+                <a href="#">Пицца</a>
+            </li>
+            <li>
+                <img src="image/set.svg" alt="vedv">
+                <a href="#">Сеты</a>
+            </li>
+            <li>
+                <img src="image/vog.svg" alt="cdv">
+                <a href="#">WOK</a>
+            </li>
+            <li>
+                <img src="image/rol.svg" alt="cdv">
+                <a href="#">Роллы</a>
+            </li>
+            <li><img src="image/set.svg" alt="cdv">
+                <a href="#">Суши</a>
+            </li>
+            <li><img src="image/salad.svg" alt="cdv">
+                <a href="#">Салаты</a>
+            </li>
+            <li><img src="image/sup.svg" alt="cdv">
+                <a href="#">Супы</a>
+            </li>
+            <li><img src="image/hot.svg" alt="cdv">
+                <a href="#">Корн доги</a>
+            </li>
+            <li><img src="image/drink.svg" alt="cdv">
+                <a href="#">Напитки</a>
+            </li>
+            <li><img src="image/stock.svg" alt="cdv">
+                <a href="#">Акции</a>
+            </li>
+
+        </ul>
+    </div>
+</aside>
+<div class="main-box-all">
+    <header>
+        <button id="buttonSide" class="sideBarButton"  onclick="openSide()">
+            <span class="arrowSide"></span>
+        </button>
+        <div class="left-content">
+            <img src="image/logo.png" alt="kj">
+            <div class="phone">
+                <h3>Наш телефон</h3>
+                <p class="number">+996 705 188 955</p>
+                <p class="number">+996 555 188 955</p>
+                <p class="color-gray">работаем с 10:00 до 00:00</p>
+            </div>
+            <div class="city">
+                <p>Город:</p>
+                <p>Бишкек</p>
+            </div>
+        </div>
+        <div class="right-content">
+            <p>Отзывы</p>
+            <a href="#" class="pay">Доставка и оплата</a>
+            <div class="search-div">
+                <input type="text" placeholder="search" id="textSearch" onblur="inputBlur()" onkeyup="inputFocus()" >
+                <button id="closeV"  onclick="resetValue()"></button>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="banner">
+            <img src="image/banner.png" alt="banner">
+        </div>
+        <div class="slider-bottom-controls">
+            <button class="active-controls"></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+        <div class="grid-box">
+            <div class="grid-body desktop">
+                <div class="grid-item column_span_2 grid-item-1"><p>Чикен</p></div>
+                <div class="grid-item grid-item-2"><p>С угрем</p></div>
+                <div class="grid-item grid-item-3"><p>Корн дог</p></div>
+                <div class="grid-item column_span_2 grid-item-4"><p>Пицца</p></div>
+                <div class="grid-item column_span_2 grid-item-5"><p>Акции</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/pagination.js"></script>
+</body>
+</html>

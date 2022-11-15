@@ -3,172 +3,18 @@
 @import "general";
 @import "fonts";
 @import "_media";
+@import "mixin/header";
+@import "mixin/aside";
 
 body {
+  display: flex;
 
-  .set {
+@include aside;
+
+  .main-box-all {
     background-color: $concrete;
-    header {
-      width: 100%;
-      min-height: 95px;
-      border: 0.5px solid $edward;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
 
-      @include media_mobile {
-       background-color: $white;
-        padding-left: 19px;
-      }
-
-      .left-content {
-        display: flex;
-
-
-        @include media_mobile {
-          align-items: center;
-        }
-
-        img {
-          display: none;
-          @include media_mobile {
-            display: block;
-            width: 47px;
-            height: 43px;
-          }
-        }
-
-        .phone {
-          border-right: 0.5px solid $edward;
-          padding: 6px 15px 8px 35px;
-          box-sizing: border-box;
-
-          @include media_mobile {
-            border-right: none;
-          }
-
-          h3 {
-            font-family: 'DIN Pro';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 22px;
-            color: $cod_gray;
-          }
-          .number {
-            font-family: 'DIN Pro';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 100%;
-            color: $neonc_carrot;
-          }
-          .color-gray {
-            font-family: 'DIN Pro';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 17px;
-            color: $edward;
-          }
-        }
-        .city {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          margin-left: 15px;
-
-          @include media_mobile {
-            display: none;
-          }
-
-          p {
-            &:first-child {
-
-              font-family: 'DIN Pro';
-              font-style: normal;
-              font-weight: 300;
-              font-size: 14px;
-              line-height: 17px;
-              color: $edward;
-              margin-bottom: 4px;
-            }
-
-            &:nth-child(2) {
-              font-family: 'DIN Pro';
-              font-style: normal;
-              font-weight: 400;
-              font-size: 18px;
-              line-height: 22px;
-              color: $black;
-            }
-          }
-        }
-      }
-      .right-content {
-        display: flex;
-        padding-right: 40px;
-
-        .search-div {
-          position: relative;
-
-          button {
-            display: none;
-            width: 10px;
-            height: 10px;
-            background-image: url("../image/close.png");
-            background-size: 10px;
-            background-repeat: no-repeat;
-            border: none;
-            cursor: pointer;
-            position: absolute;
-            top: 6px;
-            right: 5px;
-            background-color: inherit;
-
-            &.show-btn {
-              display: inline-block;
-            }
-          }
-
-          .search {
-            width: 30px;
-            height: 30px;
-            background-image: url("../image/search.svg");
-            cursor: pointer;
-          }
-        }
-
-        p {
-          font-family: 'DIN Pro';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 22px;
-          color: $cod_gray;
-          margin-right: 10px;
-
-          @include media_mobile {
-            display: none;
-          }
-        }
-        .pay {
-          font-family: 'DIN Pro';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 22px;
-          color: $neonc_carrot;
-          text-decoration: none;
-          margin-right: 69px;
-
-          @include media_mobile {
-            display: none;
-          }
-        }
-      }
-
-    }
+    @include header;
 
     .content_set {
       max-width: 1170px;
@@ -190,11 +36,103 @@ body {
         }
 
       }
+
       .cont-text-select {
         display: flex;
         justify-content: space-between;
         padding-left: 111px;
         padding-right: 111px;
+        margin-top: 22px;
+
+        .custom-menu{
+          background-color: #FFFFFF;
+          width: 198px;
+          height: 70px;
+          border-radius: 15px;
+
+          .menu__list {
+            border-radius: 15px;
+            box-shadow: 0px 0px 18px 6px rgb(0 0 0 / 9%);
+            li {
+              list-style: none;
+              position: relative;
+
+              >p{
+                font-family: 'DIN Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 22px;
+                padding-bottom: 10px;
+                border-bottom: 0.5px solid #A4ACAD;
+                padding-top: 26px;
+                max-width: 180px;
+                margin-left: 14px;
+
+              }
+              span {
+                &.menu__arrow {
+                  &.arrow {
+                    position: absolute;
+                    right: 20px;
+                    top: 33px;
+                    width: 0px;
+                    height: 0;
+                    transform: rotate(224deg);
+                    border-width: 0 1px 1px 0;
+                    border-style: solid;
+                    border-color: $jaffa;
+                    padding: 4px;
+
+                    cursor: pointer;
+
+                  }
+                  &.active {
+                    transform: rotate(45deg);
+                  }
+                }
+              }
+
+
+              a {
+                cursor: pointer;
+
+                &.sub-menu__link{
+                  text-decoration: none;
+                  color: black;
+                  font-family: 'DIN Pro';
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 18px;
+                  line-height: 22px;
+
+
+                  &:hover {
+                    color: $jaffa;
+                  }
+                }
+              }
+            }
+            .sub-menu__list {
+              display: none;
+              width: 198px;
+              position: absolute;
+              background-color: #FFFFFF;
+              box-shadow: 0px 0px 18px 6px rgba(0, 0, 0, 0.09);
+              padding-top: 10px;
+              box-sizing: border-box;
+              padding-left: 13px;
+              &.open {
+                display: block;
+              }
+
+              >li {
+                margin-bottom: 20px;
+              }
+
+            }
+          }
+        }
       }
 
       .boxes {
@@ -430,6 +368,39 @@ body {
           color: $edward;
         }
       }
+    }
+
+    .accordionSection {
+      margin-bottom: 180px;
+
+      .accordion {
+
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+
+        &:hover {
+          background-color: #ccc;
+        }
+
+        &:active {
+          background-color: #ccc;
+        }
+      }
+
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+      }
+
     }
 
   }

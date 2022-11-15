@@ -1,0 +1,156 @@
+@import "color";
+@import "reset";
+@import "general";
+@import "fonts";
+@import "_media";
+@import "mixin/header";
+@import "mixin/aside";
+
+
+body {
+  min-width: 1170px;
+  display: flex;
+  background-color: $concrete;
+
+  @include aside;
+ .main-box-all {
+   width: 100%;
+   @include header;
+   .main-content {
+     max-width: 950px;
+     margin: auto;
+
+     .banner {
+       margin-top: 30px;
+       width: 100%;
+       img {
+         width: 950px;
+       }
+
+     }
+     .slider-bottom-controls {
+       max-width: 10%;
+       margin: auto;
+       margin-top: 20px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+
+       @include media_tablet {
+         max-width: 12%;
+       }
+       @include media_mobile {
+         margin-top: 15px;
+       }
+
+
+       button {
+         min-width: 6px;
+         min-height: 6px;
+         background-color: $edward;
+         border: none;
+         border-radius: 50%;
+         padding: 0;
+         margin-right: 7px;
+         margin-left: 7px;
+         cursor: pointer;
+
+         &.active-controls {
+           min-width: 12px;
+           min-height: 12px;
+           background-color: #E97522;
+         }
+       }
+     }
+     .grid-box {
+       min-height: 450px;
+       margin-top: 31px;
+       .grid-body {
+         display: grid;
+
+         &.desktop {
+           grid-template: repeat(2, 200px) / repeat(4, 25%);
+
+         }
+
+         .grid-item {
+           margin: 13px;
+           background-position: center;
+           background-repeat: no-repeat;
+           border-radius: 5px;
+           background-size: cover;
+           display: flex;
+           align-items: flex-end;
+           position: relative;
+
+           &::after {
+             content: "";
+             width: 100%;
+             height: 200px;
+             position: absolute;
+             background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+             background-size: cover;
+             border-radius: 15px;
+
+             @include media_mobile {
+               border-radius: 5px;
+             }
+           }
+
+
+
+           p {
+             font-family: 'DIN Pro';
+             font-style: normal;
+             font-weight: 500;
+             font-size: 24px;
+             line-height: 30px;
+             color: $white;
+             padding: 10px;
+             z-index: 2;
+           }
+
+           &.row_span_2 {
+             grid-row-start: span 2;
+           }
+
+           &.column_span_2 {
+             grid-column-start: span 2;
+           }
+
+           &:nth-child(1), &:nth-child(4) {
+             margin-left: 0;
+           }
+           &:nth-child(3), &:nth-child(5) {
+             margin-right: 0;
+           }
+
+
+           &.grid-item-1 {
+             background-image: url("../image/grid-1.png");
+           }
+
+           &.grid-item-2 {
+             background-image: url("../image/grid-2.png");
+           }
+
+           &.grid-item-3 {
+             background-image: url("../image/grid-3.png");
+           }
+
+           &.grid-item-4 {
+             background-image: url("../image/grid-4.png");
+           }
+
+           &.grid-item-5 {
+             background-image: url("../image/grid-5.png");
+           }
+
+         }
+       }
+     }
+   }
+ }
+
+
+}

@@ -9,8 +9,54 @@
     <link rel="stylesheet" href="scss/home.css">
 </head>
 <body>
-<section class="set">
+<aside id="aside">
+    <div class="logo1">
+        <img src="image/Logosidebar.svg" alt="verv">
+    </div>
+     <div class="components">
+         <ul>
+             <li><img src="image/piza.svg" alt="verv">
+                 <a href="#">Пицца</a>
+             </li>
+             <li>
+                 <img src="image/set.svg" alt="vedv">
+                 <a href="#">Сеты</a>
+             </li>
+             <li>
+                 <img src="image/vog.svg" alt="cdv">
+                 <a href="#">WOK</a>
+             </li>
+             <li>
+                 <img src="image/rol.svg" alt="cdv">
+                 <a href="#">Роллы</a>
+             </li>
+             <li><img src="image/set.svg" alt="cdv">
+                 <a href="#">Суши</a>
+             </li>
+             <li><img src="image/salad.svg" alt="cdv">
+                 <a href="#">Салаты</a>
+             </li>
+             <li><img src="image/sup.svg" alt="cdv">
+                 <a href="#">Супы</a>
+             </li>
+             <li><img src="image/hot.svg" alt="cdv">
+                 <a href="#">Корн доги</a>
+             </li>
+             <li><img src="image/drink.svg" alt="cdv">
+                 <a href="#">Напитки</a>
+             </li>
+             <li><img src="image/stock.svg" alt="cdv">
+                 <a href="#">Акции</a>
+             </li>
+
+         </ul>
+     </div>
+</aside>
+<section class="main-box-all">
     <header>
+        <button id="buttonSide" class="sideBarButton"  onclick="openSide()">
+            <span class="arrowSide"></span>
+        </button>
         <div class="left-content">
             <img src="image/logo.png" alt="kj">
             <div class="phone">
@@ -38,7 +84,7 @@
         <div class="cont-text-select">
             <h2>Сеты</h2>
             <div class="custom-select">
-                <select onchange="selectPrice()" id="sort">
+                <select onchange="selectPrice()" id="sort" >
                     <option value="0">По умолчанию</option>
                     <option value="1">Название</option>
                     <option value="2">Сначала дешевле</option>
@@ -46,6 +92,36 @@
                     <option value="4">Количество кусочков</option>
                     <option value="5">Вес</option>
                 </select>
+            </div>
+            <div class="custom-menu">
+                <ul class="menu__list">
+                    <li>
+                        <p class="select_current">По умолчанию</p>
+                        <span class="menu__arrow arrow">
+
+                        </span>
+                        <ul class="sub-menu__list" id="fu">
+                            <li >
+                                <a href="#" class="sub-menu__link" onclick="selectcha(0)">По умолчанию</a>
+                            </li>
+                            <li>
+                                <a href="#" class="sub-menu__link" onclick="selectcha(1)">Название</a>
+                            </li>
+                            <li>
+                                <a href="#" class="sub-menu__link" onclick="selectcha(2)" >Сначала дешевле</a>
+                            </li>
+                            <li>
+                                <a href="#" class="sub-menu__link" onclick="selectcha(3)">Сначала дороже</a>
+                            </li>
+                            <li>
+                                <a href="#" class="sub-menu__link" onclick="selectcha(4)">Количество кусочков</a>
+                            </li>
+                            <li>
+                                <a href="#" class="sub-menu__link" onclick="selectcha(5)">Вес</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="boxes"></div>
@@ -66,6 +142,22 @@
             <p>В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский
                 майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом
                 спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.</p>
+        </div>
+    </div>
+    <div class="accordionSection">
+        <button class="accordion">Section 1</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <button class="accordion">Section 2</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <button class="accordion">Section 3</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
         </div>
     </div>
 </section>

@@ -1007,7 +1007,9 @@ table {
   font-style: italic;
 }
 body {
+  min-width: 1170px;
   display: flex;
+  background-color: #F2F2F2;
 }
 body aside {
   min-width: 320px;
@@ -1066,7 +1068,7 @@ body aside .components ul li a:hover {
   color: #FF9846;
 }
 body .main-box-all {
-  background-color: #F2F2F2;
+  width: 100%;
 }
 body .main-box-all header {
   width: 100%;
@@ -1245,345 +1247,121 @@ body .main-box-all header .right-content .pay {
     display: none;
   }
 }
-body .main-box-all .content_set {
-  max-width: 1170px;
-  min-height: 2295px;
+body .main-box-all .main-content {
+  max-width: 950px;
   margin: auto;
-  box-sizing: border-box;
 }
-body .main-box-all .content_set .sort {
-  width: 330px;
-  height: 50px;
-  background-color: #FFFFFF;
-  border-radius: 10px;
+body .main-box-all .main-content .banner {
+  margin-top: 30px;
+  width: 100%;
+}
+body .main-box-all .main-content .banner img {
+  width: 950px;
+}
+body .main-box-all .main-content .slider-bottom-controls {
+  max-width: 10%;
   margin: auto;
-  display: none;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 1024px) {
+  body .main-box-all .main-content .slider-bottom-controls {
+    max-width: 12%;
+  }
 }
 @media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .sort {
-    display: block;
+  body .main-box-all .main-content .slider-bottom-controls {
     margin-top: 15px;
   }
 }
-body .main-box-all .content_set .cont-text-select {
+body .main-box-all .main-content .slider-bottom-controls button {
+  min-width: 6px;
+  min-height: 6px;
+  background-color: #A4ACAD;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  margin-right: 7px;
+  margin-left: 7px;
+  cursor: pointer;
+}
+body .main-box-all .main-content .slider-bottom-controls button.active-controls {
+  min-width: 12px;
+  min-height: 12px;
+  background-color: #E97522;
+}
+body .main-box-all .main-content .grid-box {
+  min-height: 450px;
+  margin-top: 31px;
+}
+body .main-box-all .main-content .grid-box .grid-body {
+  display: grid;
+}
+body .main-box-all .main-content .grid-box .grid-body.desktop {
+  grid-template: repeat(2, 200px)/repeat(4, 25%);
+}
+body .main-box-all .main-content .grid-box .grid-body .grid-item {
+  margin: 13px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  background-size: cover;
   display: flex;
-  justify-content: space-between;
-  padding-left: 111px;
-  padding-right: 111px;
-  margin-top: 22px;
-}
-body .main-box-all .content_set .cont-text-select .custom-menu {
-  background-color: #FFFFFF;
-  width: 198px;
-  height: 70px;
-  border-radius: 15px;
-}
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list {
-  border-radius: 15px;
-  box-shadow: 0px 0px 18px 6px rgba(0, 0, 0, 0.09);
-}
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list li {
-  list-style: none;
+  align-items: flex-end;
   position: relative;
 }
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list li > p {
+body .main-box-all .main-content .grid-box .grid-body .grid-item::after {
+  content: "";
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background-size: cover;
+  border-radius: 15px;
+}
+@media only screen and (max-width: 640px) {
+  body .main-box-all .main-content .grid-box .grid-body .grid-item::after {
+    border-radius: 5px;
+  }
+}
+body .main-box-all .main-content .grid-box .grid-body .grid-item p {
   font-family: "DIN Pro";
   font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  padding-bottom: 10px;
-  border-bottom: 0.5px solid #A4ACAD;
-  padding-top: 26px;
-  max-width: 180px;
-  margin-left: 14px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  color: #FFFFFF;
+  padding: 10px;
+  z-index: 2;
 }
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list li span.menu__arrow.arrow {
-  position: absolute;
-  right: 20px;
-  top: 33px;
-  width: 0px;
-  height: 0;
-  transform: rotate(224deg);
-  border-width: 0 1px 1px 0;
-  border-style: solid;
-  border-color: #F46D40;
-  padding: 4px;
-  cursor: pointer;
+body .main-box-all .main-content .grid-box .grid-body .grid-item.row_span_2 {
+  grid-row-start: span 2;
 }
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list li span.menu__arrow.active {
-  transform: rotate(45deg);
+body .main-box-all .main-content .grid-box .grid-body .grid-item.column_span_2 {
+  grid-column-start: span 2;
 }
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list li a {
-  cursor: pointer;
+body .main-box-all .main-content .grid-box .grid-body .grid-item:nth-child(1), body .main-box-all .main-content .grid-box .grid-body .grid-item:nth-child(4) {
+  margin-left: 0;
 }
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list li a.sub-menu__link {
-  text-decoration: none;
-  color: black;
-  font-family: "DIN Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-}
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list li a.sub-menu__link:hover {
-  color: #F46D40;
-}
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list .sub-menu__list {
-  display: none;
-  width: 198px;
-  position: absolute;
-  background-color: #FFFFFF;
-  box-shadow: 0px 0px 18px 6px rgba(0, 0, 0, 0.09);
-  padding-top: 10px;
-  box-sizing: border-box;
-  padding-left: 13px;
-}
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list .sub-menu__list.open {
-  display: block;
-}
-body .main-box-all .content_set .cont-text-select .custom-menu .menu__list .sub-menu__list > li {
-  margin-bottom: 20px;
-}
-body .main-box-all .content_set .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-body .main-box-all .content_set .boxes .item {
-  width: 288px;
-  height: 400px;
-  background-color: #FFFFFF;
-  margin-top: 30px;
-  margin-right: 42px;
-  padding-left: 17px;
-  padding-right: 8.8px;
-  box-sizing: border-box;
-}
-body .main-box-all .content_set .boxes .item:nth-child(3), body .main-box-all .content_set .boxes .item:nth-child(6), body .main-box-all .content_set .boxes .item:nth-child(9) {
+body .main-box-all .main-content .grid-box .grid-body .grid-item:nth-child(3), body .main-box-all .main-content .grid-box .grid-body .grid-item:nth-child(5) {
   margin-right: 0;
 }
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .boxes .item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 330px;
-    height: 120px;
-    margin-right: 0;
-    border-radius: 10px;
-    padding: 18px 14px;
-    -top: 10px;
-  }
+body .main-box-all .main-content .grid-box .grid-body .grid-item.grid-item-1 {
+  background-image: url("../image/grid-1.png");
 }
-body .main-box-all .content_set .boxes .item img {
-  width: 253px;
-  height: 211px;
+body .main-box-all .main-content .grid-box .grid-body .grid-item.grid-item-2 {
+  background-image: url("../image/grid-2.png");
 }
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .boxes .item img {
-    width: 100px;
-    height: 84px;
-    margin-top: 18px;
-  }
+body .main-box-all .main-content .grid-box .grid-body .grid-item.grid-item-3 {
+  background-image: url("../image/grid-3.png");
 }
-body .main-box-all .content_set .boxes .item .content-item h3 {
-  font-family: "DIN Pro";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 30px;
-  color: #000000;
-  margin-bottom: 31px;
+body .main-box-all .main-content .grid-box .grid-body .grid-item.grid-item-4 {
+  background-image: url("../image/grid-4.png");
 }
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .boxes .item .content-item h3 {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    margin-bottom: 5px;
-  }
-}
-body .main-box-all .content_set .boxes .item .content-item > p {
-  font-family: "DIN Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  color: #A4ACAD;
-  margin-bottom: 21px;
-}
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .boxes .item .content-item > p {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    margin-bottom: 18px;
-  }
-}
-body .main-box-all .content_set .boxes .item .content-item .buy {
-  display: flex;
-  border-top: 0.5px solid #A4ACAD;
-  padding-top: 5.7px;
-}
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .boxes .item .content-item .buy {
-    border-top: none;
-  }
-}
-body .main-box-all .content_set .boxes .item .content-item .buy .price {
-  font-family: "DIN Pro";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 30px;
-  display: flex;
-  align-items: center;
-  color: #000000;
-  margin-right: 11px;
-}
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .boxes .item .content-item .buy .price {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 23px;
-  }
-}
-body .main-box-all .content_set .boxes .item .content-item .buy button {
-  width: 142px;
-  height: 40px;
-  background-color: #F46D40;
-  font-family: "DIN Pro";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 30px;
-  color: #F2F2F2;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .boxes .item .content-item .buy button {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    width: 95px;
-    height: 26px;
-  }
-}
-body .main-box-all .content_set .boxes .item .content-item .buy button:hover {
-  background-color: #be380a;
-}
-body .main-box-all .content_set .pagination {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 100px;
-  margin-right: 107px;
-}
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .pagination {
-    display: flex;
-    margin-top: 50px;
-    justify-content: center;
-    align-items: center;
-    margin-right: inherit;
-  }
-}
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .pagination .pagination-content button {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    margin-right: 4px;
-  }
-}
-body .main-box-all .content_set .pagination .left {
-  margin-right: 14px;
-}
-body .main-box-all .content_set .pagination .right {
-  margin-left: 14px;
-}
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .pagination .right {
-    margin-left: 10px;
-  }
-}
-body .main-box-all .content_set .pagination button {
-  width: 75px;
-  height: 25px;
-  margin-top: 13px;
-  border: 1px solid #2c2a2a;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 2px;
-}
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .pagination button {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-  }
-}
-body .main-box-all .content_set .pagination button.active {
-  background-color: #F46D40;
-  color: white;
-}
-body .main-box-all .content_set .text-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  max-width: 950px;
-  margin: auto;
-  margin-top: 100px;
-}
-@media only screen and (max-width: 640px) {
-  body .main-box-all .content_set .text-content {
-    max-width: 330px;
-  }
-}
-body .main-box-all .content_set .text-content h3 {
-  font-family: "DIN Pro";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 30px;
-  color: #A4ACAD;
-  margin-bottom: 10px;
-}
-body .main-box-all .content_set .text-content p {
-  font-family: "DIN Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 100%;
-  color: #A4ACAD;
-}
-body .main-box-all .accordionSection {
-  margin-bottom: 180px;
-}
-body .main-box-all .accordionSection .accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-body .main-box-all .accordionSection .accordion:hover {
-  background-color: #ccc;
-}
-body .main-box-all .accordionSection .accordion:active {
-  background-color: #ccc;
-}
-body .main-box-all .accordionSection .panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
+body .main-box-all .main-content .grid-box .grid-body .grid-item.grid-item-5 {
+  background-image: url("../image/grid-5.png");
 }
 
-/*# sourceMappingURL=home.css.map */
+/*# sourceMappingURL=startPage.css.map */

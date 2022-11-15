@@ -190,7 +190,7 @@ function resetValue () {
     buttonClose.classList.remove('show-btn');
 
     input.addEventListener('keydown', logKey);
-    function logKey(e) {
+    function logKey() {
         buttonClose.classList.remove('show-btn');
     }
 }
@@ -204,6 +204,7 @@ function inputFocus() {
 }
 
 function selectPrice() {
+    console.log((document.getElementById("sort").value))
     switch (document.getElementById("sort").value) {
         case "0":
             console.log('0', baseArr)
@@ -248,7 +249,7 @@ function selectPrice() {
             workingArr = baseArr;
             break;
     }
-    console.log('showSlice')
+
     showSlice(1);
     // if(sortType) {
     //
@@ -272,3 +273,132 @@ function selectPrice() {
     // }
 }
 
+let body = document.querySelector('body');
+
+    body.classList.add('touch');
+    let arrow = document.querySelectorAll('.arrow');
+    for (i = 0; i<arrow.length; i++){
+        let thisLink= arrow[i].previousElementSibling;
+        let thisArrow= arrow[i];
+        let subMenu = arrow[i].nextElementSibling;
+
+        thisLink.classList.add('parent')
+       arrow[i].addEventListener('click', function(){
+           subMenu.classList.toggle('open');
+           thisArrow.classList.toggle('active');
+       })
+    }
+
+function selectcha(n) {
+    console.log(document.querySelectorAll(".sub-menu__link"));
+    let fu = document.getElementById("fu");
+    fu.classList.remove('open');
+    switch (n) {
+        case 0:
+            console.log('0', baseArr);
+            workingArr = baseArr;
+
+            break;
+        case 1:
+            workingArr = [...workingArr].sort((a, b) => {
+                if(a.name < b.name) { return -1; }
+                if(a.name > b.name) { return 1; }
+                return 0;
+            });
+            break;
+        case 2:
+            workingArr = [...workingArr].sort((a, b) => {
+                if (a.price > b.price) {return 1;}
+                if (a.price < b.price) {return -1;}
+                return 0;
+            });
+            break;
+        case 3:
+            workingArr = [...workingArr].sort((a, b) => {
+                if (a.price > b.price) {return -1;}
+                if (a.price < b.price) {return 1;}
+                return 0;
+            });
+            break;
+        case 4:
+            workingArr = [...workingArr].sort((a, b) => {
+                if(a.peace < b.peace) { return -1; }
+                if(a.peace > b.peace) { return 1; }
+                return 0;
+            });
+            break;
+        case 5:
+            workingArr = [...workingArr].sort((a, b) => {
+                if(a.kg < b.kg) { return -1; }
+                if(a.kg > b.kg) { return 1; }
+                return 0;
+            });
+            break;
+        default:
+            workingArr = baseArr;
+            break;
+
+    }
+
+    showSlice(1);
+    // if(sortType) {
+    //
+    //     baseArr.sort((a, b) => {
+    //         if (a.price > b.price) {
+    //             if (sortType === 'lower') {
+    //                 return 1;
+    //             } else if (sortType === 'higher') {
+    //                 return -1;
+    //             }
+    //         }
+    //         if (a.price < b.price) {
+    //             if (sortType === 'lower') {
+    //                 return -1;
+    //             } else if (sortType === 'higher') {
+    //                 return 1;
+    //             }
+    //         }
+    //         return 0;
+    //     });
+    // }
+}
+
+let select = function () {
+        let selectItem = document.querySelectorAll(".sub-menu__link");
+
+        selectItem.forEach(item => {
+            item.addEventListener('click', selectChoose)
+        })
+    function selectChoose() {
+            let text = this.innerText;
+            currentText = this.closest('.custom-menu').querySelector('.select_current');
+            currentText.innerText = text;
+    }
+}
+
+select();
+
+ function close() {
+     fu.classList.remove('open');
+ }
+
+ function openSide() {
+     const siteBar = document.getElementById('aside');
+     const button = document.getElementById("buttonSide");
+     siteBar.classList.toggle('closeSide')
+ }
+
+let acc = document.getElementsByClassName("accordion");
+let i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
