@@ -1,4 +1,190 @@
 @import "color";
 @import "fonts";
+@import "_media";
+
+.item {
+  width: 288px;
+  height: 400px;
+  background-color: $white;
+  margin-top: 30px;
+  margin-right: 42px;
+  padding-left: 17px;
+  padding-right: 8.80px;
+  box-sizing: border-box;
+
+  &:nth-child(3), &:nth-child(6), &:nth-child(9) {
+    margin-right: 0;
+  }
+
+  @include media_mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 330px;
+    height: 120px;
+    margin-right: 0;
+    border-radius: 10px;
+    padding: 18px 14px;
+    -top: 10px;
+
+  }
+
+  img {
+    width: 253px;
+    height: 211px;
+
+    @include media_mobile {
+      width: 100px;
+      height: 84px;
+      margin-top: 18px;
+    }
+  }
+
+  .content-item {
+    h3 {
+      font-family: 'DIN Pro';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 30px;
+      color: $black;
+      margin-bottom: 31px;
+
+      @include media_mobile {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 5px;
+      }
+    }
+
+    > p {
+      font-family: 'DIN Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: $edward;
+      margin-bottom: 21px;
+
+      @include media_mobile {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 18px;
+      }
+
+    }
+    .buy {
+      display: flex;
+      border-top: 0.5px solid $edward;
+      padding-top: 5.70px;
+
+      @include media_mobile {
+        border-top: none;
+      }
+
+
+      .price {
+        font-family: 'DIN Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        color: $black;
+        margin-right: 11px;
+
+        @include media_mobile {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 23px;
+        }
+      }
+
+      button {
+        width: 142px;
+        height: 40px;
+        background-color: $jaffa;
+        font-family: 'DIN Pro';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+        color: $concrete;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        @include media_mobile {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          width: 95px;
+          height: 26px;
+        }
+
+        &:hover {
+          background-color: #be380a;
+        }
+      }
+    }
+  }
+
+
+}
+
+.rightButton , .leftButton {
+  width: 60px;
+  height: 60px;
+  background-color: $cod_gray;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+}
+.rightButton {
+  top: 3px;
+  right: 4px;
+}
+
+.leftButton {
+  top: 269px;
+  left: -68px;
+}
+
+.text-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 950px;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 60px;
+
+  @include media_mobile {
+    max-width: 330px;
+  }
+
+  h3 {
+    font-family: 'DIN Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: $edward;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-family: 'DIN Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: $edward;
+  }
+}
+
 
 

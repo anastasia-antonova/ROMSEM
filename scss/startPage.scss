@@ -23,9 +23,13 @@ body {
      .banner {
        margin-top: 30px;
        width: 100%;
-       img {
-         width: 950px;
+
+       .item {
+         img {
+           width: 950px;
+         }
        }
+
 
      }
      .slider-bottom-controls {
@@ -149,6 +153,39 @@ body {
          }
        }
      }
+     .slider {
+       .leftButton {
+
+       }
+       .rightButton {
+         top: -224px;
+         right: -965px;
+       }
+       .box {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         position: relative;
+
+         .item {
+           padding-bottom: 10px;
+           .content-item {
+             min-height: 180px;
+
+             h3 {
+               min-height: 60px;
+             }
+           }
+         }
+       }
+     }
+
+   }
+   footer {
+     width: 100%;
+     min-height: 268px;
+     background-color: #7ae9fa;
+     border-top: 1px solid gray;
    }
  }
 

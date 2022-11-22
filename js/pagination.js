@@ -401,4 +401,26 @@ for (i = 0; i < acc.length; i++) {
             panel.style.maxHeight = panel.scrollHeight + "px";
         }
     });
+
+
+}
+function showBannerImage(index) {
+    const arrBanner = [
+        {img:"image/banner.png"},
+        {img:"image/banner1.png"},
+        {img:"image/banner2.png"},
+        {img:"image/banner3.png"},
+        {img:"image/banner4.png"},
+    ]
+    const content = document.querySelector(".banner");
+    let html = "";
+    arrBanner.slice(1).forEach((value, index) => {
+        html += `
+        
+        <div class="item">
+            <img src="image/${value.image}" alt="hjh">
+     
+        </div>`
+    });
+    content.innerHTML = html;
 }
