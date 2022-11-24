@@ -17,14 +17,13 @@ body {
    width: 100%;
    @include header;
    .main-content {
-     max-width: 950px;
-     margin: auto;
+
 
      .banner {
-       margin-top: 30px;
-       width: 100%;
 
-       .item {
+       .item-banner {
+         margin-top: 30px;
+
          img {
            width: 950px;
          }
@@ -182,10 +181,113 @@ body {
 
    }
    footer {
+
+     display: flex;
      width: 100%;
      min-height: 268px;
-     background-color: #7ae9fa;
-     border-top: 1px solid gray;
+     border-top: 0.5px solid  $edward;
+     padding-top: 22px;
+
+
+     .services, .sotial, .contact {
+       padding-top: 9px;
+     }
+
+     .services {
+       padding-right: 133px;
+
+       ul {
+
+          li {
+            margin-bottom: 20px;
+            a {
+              font-family: 'DIN Pro';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 100%;
+              color: $black;
+              text-decoration: none;
+
+              &:hover {
+
+              }
+
+            }
+          }
+       }
+
+     }
+
+     .sotial {
+       padding-left: 41px;
+       border-left: 0.5px solid  $edward;
+       border-right: 0.5px solid  $edward;
+       max-width: 330px;
+       padding-right: 77px;
+
+       .telephone {
+         font-family: 'DIN Pro';
+         font-style: normal;
+         font-weight: 500;
+         font-size: 18px;
+         line-height: 22px;
+         color: $edward;
+         margin-bottom: 20px;
+       }
+
+
+
+       .name-servises {
+         font-family: 'DIN Pro';
+         font-style: normal;
+         font-weight: 500;
+         font-size: 18px;
+         line-height: 22px;
+         color: $black;
+         margin-bottom: 10px;
+       }
+
+       .tel {
+         font-family: 'DIN Pro';
+         font-style: normal;
+         font-weight: 400;
+         font-size: 18px;
+         line-height: 22px;
+         margin-bottom: 10px;
+         color: $edward;
+       }
+
+       .logo-sotial {
+         margin-top: 10px;
+         img {
+
+           &:nth-child(2) {
+             margin-right: 30px;
+             margin-left: 30px;
+           }
+         }
+       }
+
+     }
+
+     .contact{
+       padding-left: 41px;
+
+       p {
+         font-family: 'DIN Pro';
+         font-style: normal;
+         font-weight: 400;
+         font-size: 18px;
+         line-height: 22px;
+         color: $edward;
+         margin-bottom: 5px;
+
+         span {
+           text-decoration: underline;
+         }
+       }
+     }
    }
  }
 

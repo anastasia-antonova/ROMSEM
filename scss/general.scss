@@ -2,6 +2,11 @@
 @import "fonts";
 @import "_media";
 
+.basic {
+  max-width: 950px;
+  margin: auto;
+}
+
 .item {
   width: 288px;
   height: 400px;
@@ -185,6 +190,8 @@
     color: $edward;
   }
 }
+
+
 
 
 

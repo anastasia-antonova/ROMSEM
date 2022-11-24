@@ -193,6 +193,11 @@ table {
   font-weight: bold;
   font-style: italic;
 }
+.basic {
+  max-width: 950px;
+  margin: auto;
+}
+
 .item {
   width: 288px;
   height: 400px;
@@ -706,6 +711,11 @@ table {
   font-weight: bold;
   font-style: italic;
 }
+.basic {
+  max-width: 950px;
+  margin: auto;
+}
+
 .item {
   width: 288px;
   height: 400px;
@@ -1219,6 +1229,11 @@ table {
   font-weight: bold;
   font-style: italic;
 }
+.basic {
+  max-width: 950px;
+  margin: auto;
+}
+
 .item {
   width: 288px;
   height: 400px;
@@ -1778,15 +1793,10 @@ body .main-box-all header .right-content .pay {
     display: none;
   }
 }
-body .main-box-all .main-content {
-  max-width: 950px;
-  margin: auto;
-}
-body .main-box-all .main-content .banner {
+body .main-box-all .main-content .banner .item-banner {
   margin-top: 30px;
-  width: 100%;
 }
-body .main-box-all .main-content .banner .item img {
+body .main-box-all .main-content .banner .item-banner img {
   width: 950px;
 }
 body .main-box-all .main-content .slider-bottom-controls {
@@ -1914,10 +1924,85 @@ body .main-box-all .main-content .slider .box .item .content-item h3 {
   min-height: 60px;
 }
 body .main-box-all footer {
+  display: flex;
   width: 100%;
   min-height: 268px;
-  background-color: #7ae9fa;
-  border-top: 1px solid gray;
+  border-top: 0.5px solid #A4ACAD;
+  padding-top: 22px;
+}
+body .main-box-all footer .services, body .main-box-all footer .sotial, body .main-box-all footer .contact {
+  padding-top: 9px;
+}
+body .main-box-all footer .services {
+  padding-right: 133px;
+}
+body .main-box-all footer .services ul li {
+  margin-bottom: 20px;
+}
+body .main-box-all footer .services ul li a {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  color: #000000;
+  text-decoration: none;
+}
+body .main-box-all footer .sotial {
+  padding-left: 41px;
+  border-left: 0.5px solid #A4ACAD;
+  border-right: 0.5px solid #A4ACAD;
+  max-width: 330px;
+  padding-right: 77px;
+}
+body .main-box-all footer .sotial .telephone {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #A4ACAD;
+  margin-bottom: 20px;
+}
+body .main-box-all footer .sotial .name-servises {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+body .main-box-all footer .sotial .tel {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 10px;
+  color: #A4ACAD;
+}
+body .main-box-all footer .sotial .logo-sotial {
+  margin-top: 10px;
+}
+body .main-box-all footer .sotial .logo-sotial img:nth-child(2) {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+body .main-box-all footer .contact {
+  padding-left: 41px;
+}
+body .main-box-all footer .contact p {
+  font-family: "DIN Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #A4ACAD;
+  margin-bottom: 5px;
+}
+body .main-box-all footer .contact p span {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=startPage.css.map */

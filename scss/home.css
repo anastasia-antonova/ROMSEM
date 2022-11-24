@@ -388,6 +388,11 @@ table {
   font-weight: bold;
   font-style: italic;
 }
+.basic {
+  max-width: 950px;
+  margin: auto;
+}
+
 .item {
   width: 288px;
   height: 400px;
@@ -901,6 +906,11 @@ table {
   font-weight: bold;
   font-style: italic;
 }
+.basic {
+  max-width: 950px;
+  margin: auto;
+}
+
 .item {
   width: 288px;
   height: 400px;

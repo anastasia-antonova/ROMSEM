@@ -404,23 +404,25 @@ for (i = 0; i < acc.length; i++) {
 
 
 }
+
 function showBannerImage(index) {
     const arrBanner = [
-        {img:"image/banner.png"},
-        {img:"image/banner1.png"},
-        {img:"image/banner2.png"},
-        {img:"image/banner3.png"},
-        {img:"image/banner4.png"},
+        {img:"banner.png"},
+        {img:"banner1.png"},
+        {img:"banner2.png"},
+        {img:"banner3.png"},
+        {img:"banner4.png"},
     ]
     const content = document.querySelector(".banner");
     let html = "";
-    arrBanner.slice(1).forEach((value, index) => {
+    arrBanner.slice(1,2).forEach((value, index) => {
         html += `
         
-        <div class="item">
-            <img src="image/${value.image}" alt="hjh">
+        <div class="item-banner">
+            <img src="image/${value.img}" alt="hjh">
      
         </div>`
     });
     content.innerHTML = html;
 }
+
