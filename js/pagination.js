@@ -419,7 +419,7 @@ function showBannerImage(index) {
         html += `
         
         <div class="item-banner">
-            <img src="image/${value.img}" alt="hjh">
+            <img src="${'image/' + value.img }" alt="hjh">
      
         </div>`
     });
