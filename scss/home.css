@@ -1290,6 +1290,7 @@ body aside .components ul li a:hover {
 }
 body .main-box-all {
   background-color: #F2F2F2;
+  width: 100%;
 }
 body .main-box-all header {
   width: 100%;

@@ -13,6 +13,7 @@ body {
   background-color: $concrete;
 
   @include aside;
+
  .main-box-all {
    width: 100%;
    @include header;

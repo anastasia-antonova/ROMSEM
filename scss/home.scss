@@ -12,6 +12,7 @@ body {
 
   .main-box-all {
     background-color: $concrete;
+    width: 100%;
 
     @include header;
 
@@ -20,7 +21,6 @@ body {
       min-height: 2295px;
       margin: auto;
       box-sizing: border-box;
-
 
       .sort {
         width: 330px;
@@ -367,6 +367,7 @@ body {
           color: $edward;
         }
       }
+
     }
 
     .accordionSection {
@@ -390,6 +391,7 @@ body {
         &:active {
           background-color: #ccc;
         }
+
       }
 
       .panel {
@@ -398,8 +400,6 @@ body {
         display: none;
         overflow: hidden;
       }
-
     }
-
   }
 }

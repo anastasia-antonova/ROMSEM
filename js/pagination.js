@@ -67,9 +67,10 @@ function showSlice(page) {
     const from = to - perPage;
 
     const content = document.querySelector(".boxes");
-    let html = "";
-    workingArr.slice(from, to).forEach((value, index) => {
-        html += `
+    if(content) {
+        let html = "";
+        workingArr.slice(from, to).forEach((value, index) => {
+            html += `
         
         <div class="item">
             <img src="image/${value.image}" alt="hjh">
@@ -83,24 +84,25 @@ function showSlice(page) {
           </div> 
            
         </div>`
-    });
-    content.innerHTML = html;
+        });
+        content.innerHTML = html;
 
-    showPaginationButtons();
-    const buttonLeft = document.querySelector('.left');
-    const buttonRight = document.querySelector('.right');
-
-    if(active === 1) {
-        buttonLeft.style.visibility = 'hidden';
-    } else {
-        buttonLeft.style.visibility = 'visible';
+        showPaginationButtons();
+        const buttonLeft = document.querySelector('.left');
+        const buttonRight = document.querySelector('.right');
+        if(buttonLeft && buttonRight) {
+            if(active === 1) {
+                buttonLeft.style.visibility = 'hidden';
+            } else {
+                buttonLeft.style.visibility = 'visible';
+            }
+            if(active === pageCount) {
+                buttonRight.style.visibility = 'hidden';
+            } else {
+                buttonRight.style.visibility = 'visible';
+            }
+        }
     }
-    if(active === pageCount) {
-        buttonRight.style.visibility = 'hidden';
-    } else {
-        buttonRight.style.visibility = 'visible';
-    }
-
 }
 function showPaginationButtons() {
     // const paginator = document.querySelector(".pagination-content");
@@ -111,49 +113,52 @@ function showPaginationButtons() {
     // paginator.innerHTML = page;
     const paginator = document.querySelector(".pagination-content");
     let page = "";
+    if(paginator) {
+        paginationInit()
+            .forEach(value => {
+                if (value) {
+                    page += `<button onclick="showSlice(${value})">${value}</button>`;
+                }
+            });
 
-    paginationInit()
-        .forEach(value => {
-            if (value) {
-                page += `<button onclick="showSlice(${value})">${value}</button>`;
-            }
-        });
-
-    // [1, 2, false, 8]
+        // [1, 2, false, 8]
 
 
-    //     .forEach((value, index, array) => {
-    //     console.log("index");
-    //     console.log(index);
-    //     console.log(active);
-    //
-    //     if(index === 0) {
-    //         page += `<button onclick="showSlice(${value})">${value}</button>`;
-    //     } else if(index === (array.length - 1)) {
-    //         page += `<button onclick="showSlice(${value})">${value}</button>`;
-    //     } else if ((index + 1) === active) {
-    //         page += `<button onclick="showSlice(${value})">${value}</button>`;
-    //     } else if ((index + 1) === (active + 1)) {
-    //         page += `<button onclick="showSlice(${value})">${value}</button>`;
-    //     } else if ((index + 1) === (active - 1)) {
-    //         page += `<button onclick="showSlice(${value})">${value}</button>`;
-    //     } else {
-    //         page += `<button>...</button>`;
-    //     }
-    // });
-    paginator.innerHTML = page;
-    checkActive();
+        //     .forEach((value, index, array) => {
+        //     console.log("index");
+        //     console.log(index);
+        //     console.log(active);
+        //
+        //     if(index === 0) {
+        //         page += `<button onclick="showSlice(${value})">${value}</button>`;
+        //     } else if(index === (array.length - 1)) {
+        //         page += `<button onclick="showSlice(${value})">${value}</button>`;
+        //     } else if ((index + 1) === active) {
+        //         page += `<button onclick="showSlice(${value})">${value}</button>`;
+        //     } else if ((index + 1) === (active + 1)) {
+        //         page += `<button onclick="showSlice(${value})">${value}</button>`;
+        //     } else if ((index + 1) === (active - 1)) {
+        //         page += `<button onclick="showSlice(${value})">${value}</button>`;
+        //     } else {
+        //         page += `<button>...</button>`;
+        //     }
+        // });
+        paginator.innerHTML = page;
+        checkActive();
+    }
 }
 showSlice(1);
 showPaginationButtons();
 
 function checkActive() {
     const paginator = document.querySelector(".pagination-content");
-    for (let i = 0; i < paginator.children.length; i++) {
-        if(active === +paginator.children[i].innerHTML) {
-            paginator.children[i].classList.add("active");
-        } else {
-            paginator.children[i].classList.remove("active");
+    if (paginator) {
+        for (let i = 0; i < paginator.children.length; i++) {
+            if (active === +paginator.children[i].innerHTML) {
+                paginator.children[i].classList.add("active");
+            } else {
+                paginator.children[i].classList.remove("active");
+            }
         }
     }
 }
@@ -171,11 +176,12 @@ function rightButton() {
 
 let input = document.querySelector('input');
 function search() {
-    const inputSearch = document.getElementById("textSearch").value;
-    console.log(inputSearch)
-    workingArr = baseArr.filter(value => value.name.includes(inputSearch))
-    showSlice(1);
-
+    const textSearch = document.getElementById("textSearch");
+    if (textSearch) {
+        const inputSearch = textSearch.value;
+        workingArr = baseArr.filter(value => value.name.includes(inputSearch))
+        showSlice(1);
+    }
 }
 
 function inputBlur() {
@@ -183,22 +189,29 @@ function inputBlur() {
 }
 
 function resetValue () {
-    input.value = "";
-    workingArr = baseArr;
-    showSlice(1);
-    const buttonClose = document.getElementById("closeV")
-    buttonClose.classList.remove('show-btn');
+    if(input) {
+        input.value = "";
+        workingArr = baseArr;
+        showSlice(1);
+        const buttonClose = document.getElementById("closeV")
+        if(buttonClose) {
+            buttonClose.classList.remove('show-btn');
 
-    input.addEventListener('keydown', logKey);
-    function logKey() {
-        buttonClose.classList.remove('show-btn');
+            input.addEventListener('keydown', logKey);
+            function logKey() {
+                buttonClose.classList.remove('show-btn');
+            }
+        }
+
     }
 }
 
 function inputFocus() {
-    if (input.value.length) {
-        const buttonClose = document.getElementById("closeV")
-        buttonClose.classList.add('show-btn');
+    if (input && input.value.length) {
+        const buttonClose = document.getElementById("closeV");
+        if(buttonClose) {
+            buttonClose.classList.add('show-btn');
+        }
     }
 
 }
@@ -277,7 +290,7 @@ let body = document.querySelector('body');
 
     body.classList.add('touch');
     let arrow = document.querySelectorAll('.arrow');
-    for (i = 0; i<arrow.length; i++){
+    for (let i = 0; i<arrow.length; i++){
         let thisLink= arrow[i].previousElementSibling;
         let thisArrow= arrow[i];
         let subMenu = arrow[i].nextElementSibling;
@@ -405,7 +418,7 @@ for (i = 0; i < acc.length; i++) {
 
 }
 
-function showBannerImage(index) {
+function showBannerImage() {
     const arrBanner = [
         {img:"banner.png"},
         {img:"banner1.png"},
@@ -414,15 +427,28 @@ function showBannerImage(index) {
         {img:"banner4.png"},
     ]
     const content = document.querySelector(".banner");
-    let html = "";
-    arrBanner.slice(1,2).forEach((value, index) => {
-        html += `
+    if(content) {
+        let html = "";
+        arrBanner.slice(1,2).forEach((value, index) => {
+            html += `
         
         <div class="item-banner">
             <img src="${'image/' + value.img }" alt="hjh">
      
         </div>`
-    });
-    content.innerHTML = html;
+        });
+        content.innerHTML = html;
+    }
 }
+
+
+let array4 = {
+    type: "Ident",
+    name: "foa"
+};
+
+let { type, name } = array4;
+
+console.log(type);
+console.log(name);
 
